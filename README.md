@@ -1,1 +1,1 @@
-# DRF_setup
+# DRF_checklist project
