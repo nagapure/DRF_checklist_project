@@ -1,5 +1,7 @@
 # GenericAPIView and Model Mixin
 from tkinter import N
+
+from .customPermissions import MyPermission
 from .models import Student
 from .serializers import StudentSerializer
 from rest_framework.response import Response
@@ -12,21 +14,10 @@ class StudentModelViewSet(viewsets.ModelViewSet):
     queryset = Student.objects.all()
     serializer_class = StudentSerializer
     authentication_classes = [SessionAuthentication]
+    permission_classes = [MyPermission]
 
-    # In IsAuthenticated all the authenticated user will be able to access the data
-    # permission_classes = [IsAuthenticated]
 
-    #  permission_classes = [AllowAny]
-
-    # When we use IsAdminUser, then only user can access the data whose staf status is true
-    # permission_classes = [IsAdminUser]
     
-    # If the user is authenticated then he can make changes in app if not he can only able to read data
-    permission_classes = [IsAuthenticatedOrReadOnly]
-
-    # permission_classes = [DjangoModelPermissions]
-
-
 
       
 
