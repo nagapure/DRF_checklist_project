@@ -19,8 +19,9 @@ class StudentApiView(ListAPIView):
     #     return Student.objects.filter(passby = user)
 
     # Filter using DjangoFilterBackend
-    # filter_backend = [DjangoFilterBackend]
-    # filterset_fields = ['name','city']
+    # filter_backends = [DjangoFilterBackend]
+    # # filterset_fields = ['name','city']
+    # filterset_fields = ['city']
 
     # Filter using Search Functionality 
     # filter_backends = [SearchFilter]
